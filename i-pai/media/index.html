@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Securicy-Policy" content="img-src 'self' data:${iconsBaseURI}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="${cssBaseURI}/main.css">
+    <title>I-pAI</title>
+</head>
+<body>
+    <!--
+        Este div va a contener toda la información de la página web
+    -->
+    <div class="container">
+        <!--
+            En este div tenemos el menubar con los botones que vamos a utilizar 
+        -->
+        <div class="block">
+            <div class="menu-bar">
+                <div class="menu-item first-item"> <!-- Icono con panda y selección de LLE -->
+                    <span class="icon"><img src="${iconsBaseURI}/panda-c7-24-icon.png" alt="panda-icon"></span>
+                </div>
+                <div class="menu-item"> <!-- Nueva conversación -->
+                    <span class="icon"><img src="${iconsBaseURI}/plus-c7-24-icon.png" alt="plus-icon"></span>  
+                </div>
+                <div class="menu-item"> <!-- Ajustes-->
+                    <span class="icon"><img src="${iconsBaseURI}/settings-c7-24-icon.png" alt="settings-icon"></span>  
+                </div>
+                <div class="menu-item">  <!-- Historial-->
+                    <span class="icon"><img src="${iconsBaseURI}/historial-c7-24-icon.png" alt="Conversation history icon"></span>  
+                </div>
+                <div class="menu-item"> <!-- Limpiar conversacion-->
+                    <span class="icon"><img src="${iconsBaseURI}/delete-conversation-c7-icon.png" alt="Clean conversation icon"></span> 
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- 
+            En este div vamos a tener el conjunto de divs de pregunta y respuesta
+        -->
+        <div class="block large">
+            <div class="block-query" id="block-query">
+                <div id="ipai-div-initial">
+                    <h1>Welcome to I-paI chat, your code assistant!!</h1>
+                    <p>Select the variables you're focusing on. Then you can ask to them.</p>
+                    <p>New here? <a href="#" target="_blank">Check out the user guide</a></p>
+                    <h2>Explore what you can do with I-pAI</h2>
+                    <div class="container">
+                        <div class="action-button">
+                            <p>Explore my variables</p>
+                        </div>
+                        <div class="action-button">
+                            <p>Explain the Dataset</p>
+                        </div>
+                        <div class="action-button">
+                            <p>Set my environment keys</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--
+            En este div va a estar el cuadro de texto que el usuario debe llenar con las preguntas
+            al dataset
+        -->
+        <div class="block input-area">
+            <textarea id="ipai-sendText" placeholder="Type your requests here..."></textarea>
+            <button id="ipai-sendButton"><img src="${iconsBaseURI}/send-icon-c7-16.png" alt="Send-Icon"></button>
+        </div>
+    </div>
+    <!--
+
+    -->
+    <script src="${jsBaseURI}/main.js"></script>
+</body>
+</html>
