@@ -45,4 +45,54 @@ const extensionConfig = {
     level: "log", // enables logging required for problem matchers
   },
 };
-module.exports = [ extensionConfig ];
+module.exports = [ 
+  // backend configuration --> VS-Code
+  {
+    mode: 'production',
+    entry: './src/extension.ts',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'extension.js',
+      libraryTarget: 'commonjs2',
+    },
+    target: 'node',
+    resolve: {
+      extensions: ['.ts', '.js'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.ts$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    externals: {
+      vscode: 'commonjs vscode',
+    },
+    devtool: 'source-map'
+  },
+ // Frontend configuration --> WebView
+  {
+    mode: 'production',
+    entry: './src/webview/App.tsx',
+    output: {
+      path: path.resolve(__dirname, 'media'),
+      filename: 'bundle.js',
+    },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          use: 'ts-loader',
+          exclude: /node_modules/,
+        },
+      ],
+    },
+    devtool: 'source-map'
+  },
+];
